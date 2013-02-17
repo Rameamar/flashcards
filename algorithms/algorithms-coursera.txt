@@ -1,0 +1,21 @@
+Who formalized the algorithm concept?	Church and Turing in 1930s
+Features of an equivalence relation?	Reflexive, Symmetric and Transitive.
+What are "connected components" in the dynamic connectivity context?	Maximal set of objects that are mutually connected.
+How is implemented the "Find query" in Union-Find?	Check if two objects are in the same connected component.
+How is implemented the "Union command" in Union-Find?	Replace components containing two objects with their union.
+<div>How many connected components result after performing the following sequence of union operations on a set of 10 items?&nbsp;</div><div><br /></div><div>1-2 &nbsp;3-4 &nbsp;5-6 &nbsp;7-8 &nbsp;7-9 &nbsp;2-8 &nbsp;0-5 &nbsp;1-9</div>	3
+What's the eager algorithm to solve the dynamic connectivity problem?	Quick-find.
+What's the data structure that support the Quick-find algorithm?	An integer array indexed by objects initialized with the same values than the objects.
+How the quick-find algorithm implements the find query?	Checks whether the value of the two objects in the ID array is the same, i.e. if they are in the same connected component.
+How is implemented the union command by the quick-find algorithm?	Change all entries with id[p] to id[q].
+Number of array accesses of the quick-find algorithm	Initialize: N, Find: 2, Union: 2N + 2
+What's the defect of quick-find	Union is too expensive. Takes N<sup>2</sup>&nbsp;(quadratic) array accesses to process sequence of N union commands on N objects.
+<div>What is the maximum number of id[] array entries that can change during one call to union when using the quick-find data structure on N elements?</div>	N - 1
+What's the problem with quadratic algorithms?	Quadratic algorithms don't scale with technology. New computers may be 10x as fast, but has 10x much memory. With quadratic algorithm, take 10x longer.
+What's the lazy approach to implement Union-Find?	Quick-union algorithm.
+What's the data structure used by the Quick-union algorithm?	Integer array id[] of size N. id[i] is parent of i.
+<div>Suppose that in a quick-union data structure on 10 elements that the id[] array is</div><div><br /></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 9 6 5 4 2 6 1 0 5</div><div><br /></div><div>What are the roots of 3 and 7, respectively?</div><div><br /></div>	6 and 6.
+How the find operation is implemented by the Quick-union algorithm?	Check if p and q have the same root.
+How is implemented the union command by the Quick-union algorithm?	To merge components containing p and q, set the id of p's root to the id of q's root.
+What's the defect of Quick-union algorithm?	Trees can get tall, so find command is too expensive (could be N array access).
+<div>What is the maximum number of array accesses during a find operation when using the quick-union data structure on N elements?</div>	Linear.
